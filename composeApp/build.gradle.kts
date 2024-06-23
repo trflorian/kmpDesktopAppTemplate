@@ -10,6 +10,12 @@ kotlin {
     jvm("desktop")
     
     sourceSets {
+        all {
+            languageSettings {
+                optIn("org.jetbrains.compose.resources.ExperimentalResourceApi")
+            }
+        }
+
         val desktopMain by getting
 
         desktopMain.dependencies {
@@ -29,8 +35,25 @@ compose.desktop {
 
         nativeDistributions {
             targetFormats(TargetFormat.Dmg, TargetFormat.Msi, TargetFormat.Deb)
-            packageName = "ch.flipflo.kmp_desktop_app"
+            packageName = "KMPDesktopApp"
             packageVersion = "1.0.0"
+
+            val iconsRoot = project.file("desktop-icons")
+            windows {
+                iconFile.set(iconsRoot.resolve("icon-windows.ico"))
+            }
+            macOS {
+                iconFile.set(iconsRoot.resolve("icon-mac.icns"))
+            }
+            linux {
+                iconFile.set(iconsRoot.resolve("icon-linux.png"))
+            }
         }
     }
+}
+
+compose.resources {
+    publicResClass = true
+//    packageOfResClass = "ch.flipflo.kmp_desktop_app.resources"
+    generateResClass = always
 }
