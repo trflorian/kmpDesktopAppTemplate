@@ -54,6 +54,5 @@ compose.desktop {
 
 compose.resources {
     publicResClass = true
-//    packageOfResClass = "ch.flipflo.kmp_desktop_app.resources"
     generateResClass = always
 }

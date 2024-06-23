@@ -4,6 +4,7 @@ import org.jetbrains.compose.resources.painterResource
 
 import kmpdesktopapp.composeapp.generated.resources.Res
 import kmpdesktopapp.composeapp.generated.resources.icon
+import ui.App
 
 fun main() = application {
     Window(
