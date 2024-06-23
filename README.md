@@ -1,11 +1,6 @@
-This is a Kotlin Multiplatform project targeting Desktop.
+# Kotlin Multiplatform Desktop App
 
-* `/composeApp` is for code that will be shared across your Compose Multiplatform applications.
-  It contains several subfolders:
-  - `commonMain` is for code that’s common for all targets.
-  - Other folders are for Kotlin code that will be compiled for only the platform indicated in the folder name.
-    For example, if you want to use Apple’s CoreCrypto for the iOS part of your Kotlin app,
-    `iosMain` would be the right folder for such calls.
+This is a template to start working with Kotlin Multiplatform for Desktop Application Development.
+It is based on the official kotlin multiplatform wizard with some tweaks, for example using material 3 and a default dark mode setup.
 
-
-Learn more about [Kotlin Multiplatform](https://www.jetbrains.com/help/kotlin-multiplatform-dev/get-started.html)…
+![Screenshot from 2024-06-23 11-09-47](https://github.com/trflorian/kmpDesktopAppTemplate/assets/27728267/90573ef5-d12d-42d4-a088-6f1a080b622b)
