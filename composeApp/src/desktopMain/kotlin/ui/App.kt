@@ -22,7 +22,11 @@ import ui.theme.AppTheme
 @Preview
 fun App() {
     AppTheme(
-        darkTheme = true
+        /*
+        * On Linux checking the system theme is not supported yet, we have to specify the theme manually.
+        * https://github.com/JetBrains/compose-multiplatform/issues/169
+         */
+        darkTheme = true,
     ) {
         Surface(
             Modifier.fillMaxSize()
