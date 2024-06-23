@@ -31,22 +31,27 @@ fun App() {
         Surface(
             Modifier.fillMaxSize()
         ) {
-            var showContent by remember { mutableStateOf(false) }
+            AppContentGreeting()
+        }
+    }
+}
+
+@Composable
+private fun AppContentGreeting() {
+    var showContent by remember { mutableStateOf(false) }
+    Column(
+        Modifier.fillMaxWidth(),
+        horizontalAlignment = Alignment.CenterHorizontally,
+        verticalArrangement = Arrangement.Center
+    ) {
+        Button(onClick = { showContent = !showContent }) {
+            Text("Click me!")
+        }
+        AnimatedVisibility(showContent) {
             Column(
-                Modifier.fillMaxWidth(),
-                horizontalAlignment = Alignment.CenterHorizontally,
-                verticalArrangement = Arrangement.Center
+                Modifier.fillMaxWidth(), horizontalAlignment = Alignment.CenterHorizontally
             ) {
-                Button(onClick = { showContent = !showContent }) {
-                    Text("Click me!")
-                }
-                AnimatedVisibility(showContent) {
-                    Column(
-                        Modifier.fillMaxWidth(), horizontalAlignment = Alignment.CenterHorizontally
-                    ) {
-                        Text("Hello Desktop!")
-                    }
-                }
+                Text("Hello Desktop!")
             }
         }
     }
